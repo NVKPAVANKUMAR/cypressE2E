@@ -1,0 +1,13 @@
+{
+  "projectId": "7812f5",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/reports/separate-reports",
+    "overwrite": false,
+    "html": false,
+    "json": true,
+    "timestamp": "mmddyyyy_HHMMss"
+   },
+  "video": false,
+  "screenshotsFolder": "cypress/screenshots"
+}

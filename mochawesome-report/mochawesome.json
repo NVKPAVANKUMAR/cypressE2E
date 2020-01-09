@@ -1,0 +1,99 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-01-03T16:23:35.357Z",
+    "end": "2020-01-03T16:24:20.076Z",
+    "duration": 44719,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6a2298f9-501c-43f5-9966-c4a34ecc234f",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ac6512f3-f36b-40ff-ac4b-d2e5df3f68e5",
+          "title": "Nop Ecommerce",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Order a Product",
+              "fullTitle": "Nop Ecommerce Order a Product",
+              "timedOut": null,
+              "duration": 40945,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Set the viewport’s width and height globally\ncy.viewport(1440, 1200); // Login\ncy.visit('https://demo.nopcommerce.com/'); //Click on Login Link\ncy.get('.ico-login').click(); // Input Email ID\ncy.get('.email').type('autopayus@gmail.com'); //Input Password\ncy.get('.password').type('waste@123'); // Check Remember me checkbox\ncy.get('#RememberMe').click(); //Click on login button\ncy.get('input.login-button').click();\ncy.screenshot('LoginSuccess'); // Assertion 1\ncy.get('.ico-logout').should('contain', 'Log out'); //Assertion 2    \ncy.get('.ico-logout').should('contain.text', 'Log out'); //Assertion 3\nexpect(cy.get('img[alt=\"nopCommerce demo store\"]')).to.not.be.null; // Search for an product\ncy.get('input#small-searchterms').type('laptop'); //Click on Search button\ncy.xpath('//input[@class=\"button-1 search-box-button\"]').click(); //Click on Product\ncy.xpath('//h2/a[.=\"Asus N551JK-XO076H Laptop\"]').click(); //Click on Add to Cart button\ncy.get('input.add-to-cart-button').click(); //assert success notification bar\ncy.xpath('//p[@class=\"content\"]').should('contain', 'The product has been added to your');\ncy.screenshot('Product Added'); //click on Shopping cart\ncy.get('li#topcartlink').click(); //assert item quantity\ncy.get('.qty-input').should('contain.value', '1'); //Check T&C Checkbox\ncy.get('input#termsofservice').click(); //click on checkout button\ncy.get('.checkout-button').click(); // // Select Country Name\n// cy.get('#BillingNewAddress_CountryId').select('India')\n// //Type Cityname\n// cy.get('#BillingNewAddress_City').type('BANGALORE')\n// // Type Street Address\n// cy.get('#BillingNewAddress_Address1').type('326 W. Somerset Dr')\n// // Type zip code\n// cy.get('#BillingNewAddress_ZipPostalCode').type('560016')\n// // Type Mobile number\n// cy.get('#BillingNewAddress_PhoneNumber').type('2222222222')\n//Click on Continue to ship to previous address\ncy.xpath('//div[@id=\"billing-buttons-container\"]/input').click(); // click on continue button\n// cy.get('#billing-buttons-container>input').click()\n//Click continue on shipping method\ncy.xpath('//div[@id=\"shipping-method-buttons-container\"]/input').click(); //Click continue in payment method\ncy.xpath('//div[@id=\"payment-method-buttons-container\"]/input').click(); //Click continue on Payment Information\ncy.xpath('//div[@id=\"payment-info-buttons-container\"]/input').click(); //Click Confirm on Confirm Order\ncy.xpath('//div[@id=\"confirm-order-buttons-container\"]/input').click(); //Validate Success message\ncy.xpath('//strong[.=\"Your order has been successfully processed!\"]').should('contain.text', 'Your order has been successfully processed!');\ncy.screenshot('Order Successful'); //Click logout\ncy.get('.ico-logout').click();",
+              "err": {},
+              "uuid": "cee9423d-2ec6-4f7d-92a2-f241069a3793",
+              "parentUUID": "ac6512f3-f36b-40ff-ac4b-d2e5df3f68e5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cee9423d-2ec6-4f7d-92a2-f241069a3793"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40945,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "5.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {},
+      "version": "4.1.0"
+    }
+  }
+}
