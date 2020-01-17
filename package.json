@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "openCypress": "./node_modules/.bin/cypress open",
-    "test": "./node_modules/.bin/cypress run --record --key 2f9f5652-d45c-4a3d-90e6-0a166048866d --reporter mochawesome",
+    "test": "./node_modules/.bin/cypress run --spec 'cypress/integration/E2E/OrderProduct.spec.js' --record --key 2f9f5652-d45c-4a3d-90e6-0a166048866d --reporter mochawesome",
     "testReport": "./node_modules/.bin/cypress run --spec */*/*/*.spec.js",
     "test:ci": "./node_modules/.bin/cypress run  cy:run:record",
     "merge-report": "npx mochawesome-merge --reportDir cypress/reports/separate-reports > cypress/reports/full_report.json",
     "generate-report": "npx mochawesome-report-generator --reportDir cypress/reports cypress/reports/full_report.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "PAVAN",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^3.4.1",
